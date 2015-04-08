@@ -18,7 +18,7 @@
     affects the distribution of precipitation, but not its *total*
     over the modeling domain.
 
-  We use a moisture transport model due to
+  We can use a moisture transport model due to
   \cite{sanberg1983modelling}, which is similar to
   \cite{roe2003orographic} in the way it parameterizes precipitation:
 
@@ -48,7 +48,7 @@
 
    In turn, assuming that $W$ is proportional to $e_s(T)$ gives
    \begin{equation}
-   P = \left( \alpha_0 + \alpha_1 \cdot v \cdot \frac{\partial z}{\partial z} \right) e_s(T),
+   P = \left( \alpha_0 + \alpha_1 \cdot v \cdot \frac{\partial z}{\partial x} \right) e_s(T),
    \end{equation}
    which is equation (9) in \cite{roe2003orographic} interpreted as precipitation.
 
