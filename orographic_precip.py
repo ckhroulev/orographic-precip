@@ -119,4 +119,4 @@ plot_parameterization(W_dont_reduce_on_lee_side, 2, 4)
 
 output_filename = "orographic-precip.png"
 plt.savefig(output_filename)
-return output_filename
+return output_filename          # you'll need to remove this to run it as a script
