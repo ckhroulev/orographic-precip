@@ -1,4 +1,4 @@
-% Created 2015-04-08 Wed 12:25
+% Created 2015-04-08 Wed 13:17
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -48,7 +48,7 @@ affects the distribution of precipitation, but not its \textbf{total}
 over the modeling domain.
 \end{itemize}
 
-We use a moisture transport model due to
+We can use a moisture transport model due to
 \cite{sanberg1983modelling}, which is similar to
 \cite{roe2003orographic} in the way it parameterizes precipitation:
 
@@ -58,7 +58,7 @@ We use a moisture transport model due to
 
 Sanberg and Oerlemans implement this using a finite difference
 approximation and explicit time stepping and iterate until a steady
-state is reached. In \cite{sanberg1983modelling} the precipitatin
+state is reached. In \cite{sanberg1983modelling} the precipitation
 pattern is updated once every 500 years of ice sheet evolution.
 
 This model was successfully used by \cite{letreguilly1993modelling}
@@ -79,7 +79,7 @@ P = (\gamma'_0 + \gamma'_1 S) W.
 
 In turn, assuming that $W$ is proportional to $e_s(T)$ gives
 \begin{equation}
-P = \left( \alpha_0 + \alpha_1 \cdot v \cdot \frac{\partial z}{\partial z} \right) e_s(T),
+P = \left( \alpha_0 + \alpha_1 \cdot v \cdot \frac{\partial z}{\partial x} \right) e_s(T),
 \end{equation}
 which is equation (9) in \cite{roe2003orographic} interpreted as precipitation.
 
@@ -144,7 +144,7 @@ def z(x, z_max):
     return z_max * bump(x, 5.0, 1.0, 1.0) + 0.5 * z_max * bump(x, 9.0, 1.0, 1.0)
 
 def W_reduce_on_lee_side(W, x, alpha0, alpha1, z_max):
-    """Right hand side of dM/dx = C * M. Note that dM/dx = p(x).
+    """Right hand side of dM/dx = C * M. Note that dM/dx = -p(x).
 
     This parameterization reduces precipitation on the lee side. (Cold
     saturated air traveling down a mountain warms up and becomes less
@@ -156,7 +156,7 @@ def W_reduce_on_lee_side(W, x, alpha0, alpha1, z_max):
     return -W * max(alpha0 + alpha1 * v * dz / dx, 0.0)
 
 def W_dont_reduce_on_lee_side(W, x, alpha0, alpha1, z_max):
-    """Right hand side of dM/dx = C * M. Note that dM/dx = p(x).
+    """Right hand side of dM/dx = C * M. Note that dM/dx = -p(x).
 
     This parameterization does not include the influence of the wind
     speed and the surface slope on the lee side. (This is equivalent

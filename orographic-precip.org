@@ -28,7 +28,7 @@
 
   Sanberg and Oerlemans implement this using a finite difference
   approximation and explicit time stepping and iterate until a steady
-  state is reached. In \cite{sanberg1983modelling} the precipitatin
+  state is reached. In \cite{sanberg1983modelling} the precipitation
   pattern is updated once every 500 years of ice sheet evolution.
 
   This model was successfully used by \cite{letreguilly1993modelling}
