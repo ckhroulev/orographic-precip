@@ -1,8 +1,7 @@
 #+LATEX_CLASS: article
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+TITLE: Modeling orographic precipitation
-#+EMAIL: ckhroulev@alaska.edu
-#+OPTIONS: author:t email:t num:t
+#+OPTIONS: author:t
 
 * Intro
 
