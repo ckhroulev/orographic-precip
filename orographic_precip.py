@@ -27,7 +27,7 @@ def z(x, z_max):
     return z_max * bump(x, 5.0, 1.0, 1.0) + 0.5 * z_max * bump(x, 9.0, 1.0, 1.0)
 
 def W_reduce_on_lee_side(W, x, alpha0, alpha1, z_max):
-    """Right hand side of dM/dx = C * M. Note that dM/dx = p(x).
+    """Right hand side of dM/dx = C * M. Note that dM/dx = -p(x).
     
     This parameterization reduces precipitation on the lee side. (Cold
     saturated air traveling down a mountain warms up and becomes less
@@ -39,7 +39,7 @@ def W_reduce_on_lee_side(W, x, alpha0, alpha1, z_max):
     return -W * max(alpha0 + alpha1 * v * dz / dx, 0.0)
 
 def W_dont_reduce_on_lee_side(W, x, alpha0, alpha1, z_max):
-    """Right hand side of dM/dx = C * M. Note that dM/dx = p(x).
+    """Right hand side of dM/dx = C * M. Note that dM/dx = -p(x).
 
     This parameterization does not include the influence of the wind
     speed and the surface slope on the lee side. (This is equivalent
