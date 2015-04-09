@@ -3,6 +3,10 @@
 #+TITLE: Modeling orographic precipitation
 #+OPTIONS: author:t
 
+#+BEGIN_SRC emacs-lisp :exports results :results output raw
+  (org-babel-tangle)
+#+END_SRC
+
 * Intro
 
   Simple upslope precipitation models such as the one used in
@@ -154,7 +158,10 @@
       return W[:,0], precipitation
 
   def plot(p, alpha0, alpha1, z_max, title, color):
-      "Plot "
+      """Plot moisture content and precipitation for a given
+      parameterization and parameter choices.
+
+      """
       W, dW = compute(p, alpha0, alpha1, z_max)
       plt.hold(True)
       plt.grid(True)

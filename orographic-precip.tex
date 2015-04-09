@@ -1,4 +1,4 @@
-% Created 2015-04-08 Wed 13:17
+% Created 2015-04-08 Wed 22:37
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -187,7 +187,10 @@ def compute(p, alpha0, alpha1, z_max):
     return W[:,0], precipitation
 
 def plot(p, alpha0, alpha1, z_max, title, color):
-    "Plot "
+    """Plot moisture content and precipitation for a given
+    parameterization and parameter choices.
+
+    """
     W, dW = compute(p, alpha0, alpha1, z_max)
     plt.hold(True)
     plt.grid(True)

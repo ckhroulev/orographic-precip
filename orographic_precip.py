@@ -70,7 +70,10 @@ def compute(p, alpha0, alpha1, z_max):
     return W[:,0], precipitation
 
 def plot(p, alpha0, alpha1, z_max, title, color):
-    "Plot "
+    """Plot moisture content and precipitation for a given
+    parameterization and parameter choices.
+
+    """
     W, dW = compute(p, alpha0, alpha1, z_max)
     plt.hold(True)
     plt.grid(True)
