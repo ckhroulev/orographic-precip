@@ -4,7 +4,8 @@
 #+OPTIONS: author:t
 
 #+BEGIN_SRC emacs-lisp :exports results :results output raw
-  (org-babel-tangle)
+  (org-babel-goto-named-src-block "references")
+  (org-babel-tangle '(4))
 #+END_SRC
 
 * Intro
@@ -218,6 +219,7 @@
 
 * References                                                       :noexport:
 
+#+NAME: references
 #+BEGIN_SRC bibtex :tangle references.bib :exports none
   @book{roe1999wobbly,
     title={Wobbly Winds in an Ice Age: The Mutual Interaction Between the Great Continental Ice Sheets and Atmospheric Stationary Waves},
@@ -253,3 +255,6 @@
     publisher={Springer}
   }
 #+END_SRC
+
+#+RESULTS:
+
